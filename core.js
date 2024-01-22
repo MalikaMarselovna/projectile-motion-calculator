@@ -1,56 +1,35 @@
-function calculate() {
-    const angleInput = document.getElementById('angle');
-    const distanceInput = document.getElementById('distance');
-  
-    const rad = Math.sin(angleInput.value * (Math.PI / 180));
-    const g = 9.8;
-  
-    const v0 = (distanceInput.value * Math.sqrt(g)) / (2 * rad);
-    const t = (2 * v0 * rad) / g;
-    const h = (v0 ** 2 * rad ** 2) / (2 * g);
-  
-    document.getElementById('v0Result').textContent = v0.toFixed(2);
-    document.getElementById('hResult').textContent = h.toFixed(2);
-    document.getElementById('tResult').textContent = t.toFixed(2);
-  
-    // Plot the graph using Plotly
-    plotGraph(v0, rad, g, t);
-  }
-  
-  function plotGraph(v0, rad, g, totalTime) {
-    const numPoints = 1000;
-    const timeIncrement = totalTime / numPoints;
-  
-    const xValues = [];
-    const yValues = [];
-  
-    for (let i = 0; i <= numPoints; i++) {
-      const time = i * timeIncrement;
-      const l = v0 * rad * time;
-      const h = (v0 * rad * time) - (0.5 * g * time ** 2);
-  
-      xValues.push(l);
-      yValues.push(h);
-    }
-  
-    const trace = {
-      x: xValues,
-      y: yValues,
-      mode: 'lines',
-      type: 'scatter'
-    };
-  
-    const layout = {
-      title: 'Projectile Motion',
-      xaxis: {
-        title: 'Distance (meters)'
-      },
-      yaxis: {
-        title: 'Height (meters)'
-      }
-    };
-  
-    Plotly.newPlot('graph', [trace], layout);
-  }
-  
-  
+function calculateFreeFall(height, initialVelocity, gravity) {
+  // Расчет времени свободного падения
+  const timeOfFlight = Math.sqrt(2 * height / gravity);
+
+  // Расчет траектории падения
+  const timePoints = Array.from({ length: 100 }, (_, i) => i * (timeOfFlight / 100));
+  const distancePoints = timePoints.map(t => initialVelocity * t);
+  const heightPoints = timePoints.map(t => height - 0.5 * gravity * t ** 2);
+
+  // Вывод графика
+  const trace = {
+    x: distancePoints,
+    y: heightPoints,
+    type: 'scatter',
+    mode: 'lines+markers',
+    hoverinfo: 'y+x',
+  };
+
+  Plotly.newPlot('fallGraph', [trace], {
+    xaxis: { title: 'Аралык (м)' },
+    yaxis: { title: 'Бийиктик (м)' },
+  });
+
+  return timeOfFlight;
+}
+
+function calculateAndPlot() {
+  const initialHeight = parseFloat(document.getElementById('initialHeight').value);
+  const initialVelocity = parseFloat(document.getElementById('initialVelocity').value);
+  const gravity = 9.81;
+
+  const fallTime = calculateFreeFall(initialHeight, initialVelocity, gravity);
+  console.log(`Время свободного падения: ${fallTime.toFixed(2)} сек`);
+}
+
