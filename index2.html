@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Траектория свободного падения</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Траектория свободного падения</h1>
+
+        <label for="initialHeight">Баштапкы бийиктик (м): </label>
+        <input type="number" id="initialHeight" value="0">
+
+        <label for="initialVelocity">Баштапкы ылдамдык (м/с): </label>
+        <input type="number" id="initialVelocity" value="0">
+
+        <button onclick="calculateAndPlot()">Графикти чыгарып беруу</button>
+
+        <div id="fallGraph"></div>
+        <canvas id="graph" width="600" height="400"></canvas>
+    </div>
+    <script>
+        function calculateFreeFall(height, initialVelocity, gravity) {
+            // Расчет времени свободного падения
+            const timeOfFlight = Math.sqrt(2 * height / gravity);
+
+            // Расчет траектории падения
+            const timePoints = Array.from({ length: 100 }, (_, i) => i * (timeOfFlight / 100));
+            const distancePoints = timePoints.map(t => initialVelocity * t);
+            const heightPoints = timePoints.map(t => height - 0.5 * gravity * t ** 2);
+
+            // Вывод графика
+            const trace = {
+                x: distancePoints,
+                y: heightPoints,
+                type: 'scatter',
+                mode: 'lines+markers',
+                hoverinfo: 'y+x',
+            };
+
+            Plotly.newPlot('fallGraph', [trace], {
+                xaxis: { title: 'Аралык (м)' },
+                yaxis: { title: 'Бийиктик (м)' },
+            });
+
+            return timeOfFlight;
+        }
+
+        function calculateAndPlot() {
+            const initialHeight = parseFloat(document.getElementById('initialHeight').value);
+            const initialVelocity = parseFloat(document.getElementById('initialVelocity').value);
+            const gravity = 9.81;
+
+            const fallTime = calculateFreeFall(initialHeight, initialVelocity, gravity);
+            console.log(`Время свободного падения: ${fallTime.toFixed(2)} сек`);
+        }
+
+    </script>
+
+</body>
+
+</html>
