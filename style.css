@@ -21,14 +21,23 @@ body {
     padding: 8px;
     margin-bottom: 10px;
   }
-  
-  button {
+  .flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  button, a{
+    text-decoration: none;
     background-color: #4caf50;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
   }
   
   button:hover {
@@ -46,4 +55,12 @@ body {
     color: #45a049;
     text-align: center;
   }
+.atmos img{
+  width: 90%;
+}
+.atmos_txt{
+  font-size: 40px;
+  text-align: center;
+  color: #45a049;
+}
   
