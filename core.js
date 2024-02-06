@@ -31,5 +31,6 @@ function calculateAndPlot() {
 
   const fallTime = calculateFreeFall(initialHeight, initialVelocity, gravity);
   console.log(`Время свободного падения: ${fallTime.toFixed(2)} сек`);
+  document.getElementById('tResult').textContent = fallTime.toFixed(2);
 }
 
