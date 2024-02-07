@@ -34,8 +34,7 @@ input,
   justify-content: space-around;
 }
 
-button,
-a {
+button {
   text-decoration: none;
   background-color: #1c58f1;
   color: white;
@@ -65,10 +64,13 @@ h1,
 .sec_tit {
   color: #1c58f1;
   text-align: center;
-  margin-bottom: 100px;
-  border-bottom: #1c58f1 3px solid;
+  
 }
-
+.all_tit{
+  border-bottom: #1c58f1 3px solid;
+  border-top: #1c58f1 3px solid;
+  margin-bottom: 100px;
+}
 .atmos img {
   width: 90%;
   margin:20px 0;
@@ -90,7 +92,7 @@ h1,
   margin-left: 170px;
 }
 .formul img{
-  width: 300px;
+  width: 200px;
   margin-right: 20px;
 }
 h4{
@@ -113,4 +115,24 @@ h4{
 .txt{
   margin-left: 100px;
   max-width: 400px;
+}
+a{
+  text-decoration: none;
+  background-color: #1c58f1;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 200px;
+}
+header,
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
