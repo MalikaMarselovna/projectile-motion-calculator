@@ -87,7 +87,7 @@ h1,
 }
 .formul{
   display: inline-flex;
-  margin-left: 150px;
+  margin-left: 130px;
 }
 .formul img{
   width: 200px;
@@ -129,6 +129,7 @@ h4{
 }
 header,
 footer{
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
