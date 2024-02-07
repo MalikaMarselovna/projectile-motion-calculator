@@ -135,3 +135,7 @@ footer{
   justify-content: space-between;
   margin-bottom: 20px;
 }
+.grad{
+  display: inline-flex;
+  margin-top: 20px;
+}
