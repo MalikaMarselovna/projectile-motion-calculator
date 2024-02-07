@@ -137,5 +137,8 @@ footer{
 }
 .grad{
   display: inline-flex;
-  margin-top: 20px;
+  margin: 20px;
+}
+.txt1{
+  margin-left: 95px;
 }
