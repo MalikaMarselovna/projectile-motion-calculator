@@ -5,33 +5,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>эркин тушуу траекториясы</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>more information</title>
 </head>
 
 <body>
-    <a class="btn" href="more.html"> башкы бет</a>
-    <div class="container">
-        <h1>ООРДУК КУЧУНУН ТААСИРИ АСТЫНДАГЫ КЫЙМЫЛ</h1>
-
-        <label for="initialHeight">Баштапкы бийиктик (м): </label>
-        <input type="number" id="initialHeight" value="0">
-
-        <label for="initialVelocity">Баштапкы ылдамдык (м/с): </label>
-        <input type="number" id="initialVelocity" value="0">
-
-        <button onclick="calculateAndPlot()">Графикти чыгарып беруу</button>
-
-        <p>Жерге тушуу убактысы:  <span id="tResult">0</span> с </p>
-
-        <div id="fallGraph"></div>
-        <canvas id="graph" width="600" height="400"></canvas>
+    <header>
+        <a class="btn" href="index.html"> бийиктик </a>
+                <a class="btn" href="index2.html"> бурч </a>
+    </header>
+    <div class="all_tit">
+        <h1 class="sec_tit">Нерсенин горизонталь багыт боюнча ыргытылышы</h1>
     </div>
-    
+    <div class="main_in flex">
+        <div class="main_l">
+            <img src="horisont.jpg" alt="">
+            <p class="about_txt txt">Горизонттон h-бийиктиктен ыргытылган нерсенин кыймылы</p>
+        </div>
+        <div class="main_r">
+            <img src="grad.jpg" alt="">
+            <p class="about_txt txt">Нерсенин баштапкы ылдамдыгы горизонтко бурч боюнча багытталган кыймыл</p>
+        </div>
 
-    <script src="core.js"></script>
+    </div>
+    <p class="main_txt">Горизонталь багыт боюнча ыргытылган нерсе оордук кучунун таасири астынды кыймылга келет.</p>
+
+    <h4>Kолдонулган формулалар:</h4>
+    <div class="more_info">
+
+        <div class="formul">
+            <img src="l.jpg" alt="">
+            <p class="about">Нерсе бийиктиктен ыргытылгандан кийин канча м аралыкта барып тушкондугун табуу учун.</p>
+        </div>
+        <div class="formul">
+            <img src="lgrad.png" alt="">
+            <p class="about">Нерсе баштапкы ылдамдыгы горизонтко бурч боюнча ыргытылгандан кийин канча м аралыкта барып тушкондугун табуу учун.</p>
+        </div>
+        <div class="formul">
+
+            <img src="tfly.jpg" alt="">
+            <p class="about">Нерсенин учуу убактысын аныктоо учун</p>
+
+        </div>
+        <div class="formul">
+            <img src="rad.png" alt="">
+            <p class="about">Градусту радианга айлантуу учун</p>
+        </div>
+        <div class="formul">
+            <img src="h.png" alt="">
+            <p class="about"> Максималдык бийиктикти аныктоо учун</p>
+        </div>
+
+    </div>
+    <div class="example">
+        <h4>Мисалы:</h4>
+        <p class="about_txt">Самолёт 8,0 км бийиктикте 1800 км/саат ылдамдык менен горизонталь багыт боюнча учуп
+            баратат. Учкуч бутаны талкалаш үчүн, андан канча километр алыктыкта бомбаны таштап жиберүүсү керек? Эгер
+            учуу бийиктиги эки эсе көп болсо, бул аралык канчага oзгoрoт?</p>
+            <br>
+            <p class="about_txt"> Артиллерист баштапкы ылдамдыгы 600 м/c болгон миномёттон 30° бурч менен ок атты . Ал ок канча аралыкта барып жарылат? </p>
+    </div>
+
+
+
+    <h3 class="atmos_txt">Бул кубулуштун жашоодо корунушу</h3>
+
+    <div class="atmos flex">
+        <img src="airplane.jpg" alt="">
+        <img src="air.jpg" alt="">
+        <img src="ball.jpg" alt="">
+        <img src="snone2.jpg" alt="">
+        <img src="basket.jpg" alt="">
+        <img src="racet.jpg" alt="">
+
+    </div>
+
+    <h3 class="atmos_txt">Стандарттык атмосфера</h3>
+    <div class="atmos flex">
+        <img src="img-_LtRdH.png" alt="">
+    </div>
+    <div class="python flex">
+        <h4>Python  программалоо тили аркылуу маанилерди табуу учун код:</h4>
+        <p class="about_txt txt1"> код жана чыккан жыйынтык</p>
+        <div class="grad">
+            
+            <img src="p2.jpg" alt="">
+            <img src="r1.jpg" alt="">
+
+        </div>
+        <div class="grad">
+            <img src="p1.jpg" alt="">
+            <img src="r2.jpg" alt="">
+
+        </div>
+    </div>
+
+    <footer>
+        <a class="btn" href="index.html"> бийиктик</a>
+        <a class="btn" href="index2.html"> бурч </a>
+    </footer>
+
+
 
 </body>
 
 </html>
-

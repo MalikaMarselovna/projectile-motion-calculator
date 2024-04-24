@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>эркин тушуу траекториясы</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <a class="btn" href="more.html"> башкы бет</a>
+    <div class="container">
+        <h1>ООРДУК КУЧУНУН ТААСИРИ АСТЫНДАГЫ КЫЙМЫЛ</h1>
+
+        <label for="initialHeight">Баштапкы бийиктик (м): </label>
+        <input type="number" id="initialHeight" value="0">
+
+        <label for="initialVelocity">Баштапкы ылдамдык (м/с): </label>
+        <input type="number" id="initialVelocity" value="0">
+
+        <button onclick="calculateAndPlot()">Графикти чыгарып беруу</button>
+
+        <p>Жерге тушуу убактысы:  <span id="tResult">0</span> с </p>
+
+        <div id="fallGraph"></div>
+        <canvas id="graph" width="600" height="400"></canvas>
+    </div>
+    
+
+    <script src="core.js"></script>
+
+</body>
+
+</html>
+
