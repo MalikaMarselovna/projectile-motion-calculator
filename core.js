@@ -1,13 +1,13 @@
 function calculateFreeFall(height, initialVelocity, gravity) {
-  // Расчет времени свободного падения
+  // эркин тушуунун убактысы
   const timeOfFlight = Math.sqrt(2 * height / gravity);
 
-  // Расчет траектории падения
+  //тушуу траекториячы
   const timePoints = Array.from({ length: 100 }, (_, i) => i * (timeOfFlight / 100));
   const distancePoints = timePoints.map(t => initialVelocity * t);
   const heightPoints = timePoints.map(t => height - 0.5 * gravity * t ** 2);
 
-  // Вывод графика
+  // графикти чыгаруу
   const trace = {
     x: distancePoints,
     y: heightPoints,
