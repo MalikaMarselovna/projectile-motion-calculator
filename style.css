@@ -48,8 +48,15 @@ button {
 
 }
 
-
-
+.img_teo{
+  width: 90%;
+  display: inline-flex;
+  margin: 0 auto;
+}
+.teo{
+  width: 40%;
+  height: 70%;
+}
 #result {
   margin-top: 20px;
 }
